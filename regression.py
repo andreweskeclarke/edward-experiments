@@ -36,6 +36,7 @@ b = Normal(loc=tf.zeros(1), scale=tf.ones(1))
 y = Normal(loc=ed.dot(X, w), scale=tf.ones(N))
 
 # Variational approximations - fully factorized w and b graphs:
+# This doesn't really count as an approximation, but whatever.
 qw = Normal(loc=tf.Variable(tf.random_normal([D])),
             scale=tf.nn.softplus(tf.Variable(tf.random_normal([D]))))
 qb = Normal(loc=tf.Variable(tf.random_normal([1])),
